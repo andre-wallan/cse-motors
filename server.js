@@ -19,4 +19,7 @@ app.get('/', (req, res) => {
 });
 
 // Start server
-app.listen(3000, () => console.log('Server running on port 3000'));
+const port = 5500;
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
