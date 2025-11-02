@@ -1,19 +1,22 @@
-// app.js
-const express = require("express");
+// server.js (ES module version)
+import express from 'express';
+import path from 'path';
+import ejs from 'ejs';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 
-// Set EJS as the view engine
-app.set("view engine", "ejs");
+// View engine setup
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-// Tell Express where your views folder is
-app.set("views", __dirname + "/views");
-
-// Serve static files from 'public' folder
-app.use(express.static("public"));
-
-// Example route
-app.get("/", (req, res) => {
-  res.render("index", { title: "Welcome to CSE Motors" });
+// Routes
+app.get('/', (req, res) => {
+  res.render('index');
 });
 
-module.exports = app;
+// Start server
+app.listen(3000, () => console.log('Server running on port 3000'));
