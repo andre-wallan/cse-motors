@@ -1,25 +1,26 @@
-// server.js (ES module version)
-import express from 'express';
-import path from 'path';
-import ejs from 'ejs';
-import { fileURLToPath } from 'url';
+import express from "express";
+import expressLayouts from "express-ejs-layouts";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// View engine setup
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+// Set EJS and layouts
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.use(expressLayouts);
+app.set("layout", "./layouts/main"); // main.ejs inside /views/layouts
+
+// Static files
+app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
-app.get('/', (req, res) => {
-  res.render('index');
+app.get("/", (req, res) => {
+  res.render("index", { title: "Home - CSE Motors" });
 });
 
-// Start server
-const port = 5500;
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+const PORT = process.env.PORT || 5500;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
