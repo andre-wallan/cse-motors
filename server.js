@@ -12,7 +12,7 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(expressLayouts);
-app.set("layout", "./layouts/main"); // main.ejs inside /views/layouts
+app.set("layout", "./layouts/layout"); // layout.ejs inside /views/layouts
 
 // Static files
 app.use(express.static(path.join(__dirname, "public")));
