@@ -35,6 +35,31 @@ main {
     box-shadow: none;
   }
 }
+/* Default background for mobile */
+body {
+  background-color: #fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Checkerboard background for large screens */
+@media (min-width: 768px) {
+  body {
+    background-image: url("/images/checker.jpg");
+    background-repeat: repeat;
+    background-size: 100px 100px; /* adjust square size */
+    background-position: center;
+  }
+
+  main {
+    background-color: white;
+    width: 80%;
+    margin: 30px auto;
+    border: 4px solid black;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+}
 
 
 /* HEADER */
