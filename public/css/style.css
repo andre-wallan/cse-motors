@@ -4,31 +4,37 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Large screen: add checkerboard */
+/* ===== Large screen: add checkerboard ===== */
 @media (min-width: 768px) {
   body {
     background-image: url("/images/checker.jpg");
     background-repeat: repeat;
-    background-size: 100px 100px; /* adjust square size */
+    background-size: 80px 80px; /* slightly smaller pattern */
     background-position: center;
   }
 
   main {
     background-color: white;
     width: 80%;
-    margin: 30px auto;
-    border: 4px solid black;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    padding: 20px;
+    margin: 40px auto;
+    border: 5px solid black;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    padding: 30px;
+  }
+
+  header, footer {
+    border: none; /* keep clean inside the border */
   }
 }
 
+/* ===== Default Main Box Styling ===== */
 main {
   border: 4px solid #000;
   border-radius: 5px;
   padding: 20px;
 }
 
+/* ===== Mobile adjustments ===== */
 @media (max-width: 767px) {
   body {
     background-image: none;
@@ -41,7 +47,7 @@ main {
   }
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
   display: flex;
   justify-content: space-between;
@@ -55,7 +61,7 @@ header {
   font-weight: bold;
 }
 
-/* NAVIGATION */
+/* ===== NAVIGATION ===== */
 nav {
   background: #444;
 }
@@ -79,7 +85,7 @@ nav a:hover {
   background: #555;
 }
 
-/* HERO SECTION */
+/* ===== HERO SECTION ===== */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -109,7 +115,7 @@ nav a:hover {
   background: #0077cc;
 }
 
-/* UPGRADES & REVIEWS */
+/* ===== UPGRADES & REVIEWS ===== */
 .upgrades-reviews {
   display: flex;
   flex-wrap: wrap;
@@ -131,6 +137,7 @@ nav a:hover {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  border: 2px solid #000; /* NEW: gives boxed feel */
 }
 .upgrade-item a {
   display: block;
@@ -139,15 +146,16 @@ nav a:hover {
   text-decoration: none;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
   background: #222;
   color: white;
   text-align: center;
   padding: 1rem;
+  font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
