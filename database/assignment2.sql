@@ -1,4 +1,4 @@
--- Ensure the UPDATE statement references the correct column
+
 UPDATE public.account
 SET account_type = 'Admin'
 WHERE account_first_name = 'Tony' AND account_last_name = 'Stark';
